@@ -12,16 +12,19 @@ tools:ignore="HardcodedDebugMode"
 # Caso não queira, basta remove - las.
 
 <br >
+
 # Tela 1
 
 ![Tela 1](./imagens/tela_1.jpg)
 
 <br >
+
 # Tela 2
 
-![Tela 2](./imagens/tela_2.jpg
+![Tela 2](./imagens/tela_2.jpg)
 
 <br >
+
 # Tela 3
 
 ![Tela 3](./imagens/tela_3.jpg)
