@@ -158,150 +158,55 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void adicionarUmListaNumeros(View view) {
-        diminuirFonte(listaDeNumeros);
-        aumentarFonte(listaDeNumeros);
-        String string = "0,00";
-        String num = "";
-        String novoValor = "";
-        listaDeNumeros.add("1");
-        for (String numero : listaDeNumeros) {
-            num += numero;
-            novoValor = string.replace("0,", num+",");
-        }
-        valor = novoValor;
-        textValor.setText(valor);
+        addNum("1");
     }
 
     public void adicionarDoisListaNumeros(View view) {
-        diminuirFonte(listaDeNumeros);
-        aumentarFonte(listaDeNumeros);
-        String string = "0,00";
-        String num = "";
-        String novoValor = "";
-        listaDeNumeros.add("2");
-        for (String numero : listaDeNumeros) {
-            num += numero;
-            novoValor = string.replace("0,", num+",");
-        }
-        valor = novoValor;
-        textValor.setText(valor);
+        addNum("2");
     }
 
     public void adicionarTresListaNumeros(View view) {
-        diminuirFonte(listaDeNumeros);
-        aumentarFonte(listaDeNumeros);
-        String string = "0,00";
-        String num = "";
-        String novoValor = "";
-        listaDeNumeros.add("3");
-        for (String numero : listaDeNumeros) {
-            num += numero;
-            novoValor = string.replace("0,", num+",");
-        }
-        valor = novoValor;
-        textValor.setText(valor);
+        addNum("3");
     }
 
     public void adicionarQuatroListaNumeros(View view) {
-        diminuirFonte(listaDeNumeros);
-        aumentarFonte(listaDeNumeros);
-        String string = "0,00";
-        String num = "";
-        String novoValor = "";
-        listaDeNumeros.add("4");
-        for (String numero : listaDeNumeros) {
-            num += numero;
-            novoValor = string.replace("0,", num+",");
-        }
-        valor = novoValor;
-        textValor.setText(valor);
+        addNum("4");
     }
 
     public void adicionarCincoListaNumeros(View view) {
-        diminuirFonte(listaDeNumeros);
-        aumentarFonte(listaDeNumeros);
-        String string = "0,00";
-        String num = "";
-        String novoValor = "";
-        listaDeNumeros.add("5");
-        for (String numero : listaDeNumeros) {
-            num += numero;
-            novoValor = string.replace("0,", num+",");
-        }
-        valor = novoValor;
-        textValor.setText(valor);
+        addNum("5");
     }
 
     public void adicionarSeisListaNumeros(View view) {
-        diminuirFonte(listaDeNumeros);
-        aumentarFonte(listaDeNumeros);
-        String string = "0,00";
-        String num = "";
-        String novoValor = "";
-        listaDeNumeros.add("6");
-        for (String numero : listaDeNumeros) {
-            num += numero;
-            novoValor = string.replace("0,", num+",");
-        }
-        valor = novoValor;
-        textValor.setText(valor);
+        addNum("6");
     }
 
     public void adicionarSeteListaNumeros(View view) {
-        diminuirFonte(listaDeNumeros);
-        aumentarFonte(listaDeNumeros);
-        String string = "0,00";
-        String num = "";
-        String novoValor = "";
-        listaDeNumeros.add("7");
-        for (String numero : listaDeNumeros) {
-            num += numero;
-            novoValor = string.replace("0,", num+",");
-        }
-        valor = novoValor;
-        textValor.setText(valor);
+        addNum("7");
     }
 
     public void adicionarOitoListaNumeros(View view) {
-        diminuirFonte(listaDeNumeros);
-        aumentarFonte(listaDeNumeros);
-        String string = "0,00";
-        String num = "";
-        String novoValor = "";
-        listaDeNumeros.add("8");
-        for (String numero : listaDeNumeros) {
-            num += numero;
-            novoValor = string.replace("0,", num+",");
-        }
-        valor = novoValor;
-        textValor.setText(valor);
+        addNum("8");
     }
 
     public void adicionarNoveListaNumeros(View view) {
-        diminuirFonte(listaDeNumeros);
-        aumentarFonte(listaDeNumeros);
-        String string = "0,00";
-        String num = "";
-        String novoValor = "";
-        listaDeNumeros.add("9");
-        for (String numero : listaDeNumeros) {
-            num += numero;
-            novoValor = string.replace("0,", num+",");
-        }
-        valor = novoValor;
-        textValor.setText(valor);
+        addNum("9");
     }
 
     public void adicionarZeroListaNumeros(View view) {
+        addNum("0");
+    }
+
+    public void addNum(String s) {
         diminuirFonte(listaDeNumeros);
         aumentarFonte(listaDeNumeros);
         String string = "0,00";
         String num = "";
         String novoValor = "";
-        listaDeNumeros.add("0");
+        listaDeNumeros.add(s);
         for (String numero : listaDeNumeros) {
             num += numero;
-            novoValor = string.replace("0,", num+",");
+            novoValor = string.replace("0,", num + ",");
         }
         valor = novoValor;
         textValor.setText(valor);
