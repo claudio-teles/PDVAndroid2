@@ -1,5 +1,7 @@
 package com.francisco_claudio.pdvandroid;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
@@ -40,6 +42,27 @@ public class TelaConfirmarActivity extends AppCompatActivity {
                         Float valor = dados.getFloat("valor");
                         String opcaoPagamento = dados.getString("opcao");
                         String dataPagamento = new Date().toGMTString();
+
+                        String criarTabela = "CREATE TABLE pagamento ("+
+						"	id INTEGER NOT NULL,"+
+						"	valor REAL NOT NULL,"+
+						"	opcao_pagamento TEXT(20) NOT NULL,"+
+						"	data_pagamento TEXT(25) NOT NULL,"+
+						"	CONSTRAINT pagamento_PK PRIMARY KEY (id)"+
+						")";
+
+                        String iserirLinha = "INSERT INTO pagamento ("+
+					"valor, opcao_pagamento, data_pagamento"+
+					") VALUES("+valor+", "+opcaoPagamento+", "+dataPagamento+")";
+
+                        try {
+                            SQLiteDatabase database = openOrCreateDatabase("pagamento", MODE_PRIVATE, null);
+                            database.execSQL(criarTabela);
+                            database.execSQL(iserirLinha);
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
 
 
                         Toast toast = Toast.makeText(

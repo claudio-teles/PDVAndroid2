@@ -1,12 +1,12 @@
 # PDVAndroid2
 
-#Projeto Android
+# Projeto Android
 
 # O APK pode ser encontrado em: AndroidStudioProjects/PDVAndroid2/app/build/outputs/apk/debug
 
-# Ou se prefirir executar em modo debbug, o arquivo manifest contem as linha:
+# Ou se prefirir executar em modo debug, o arquivo manifest contem as linha:
 
-android:debuggable="true"
+android:debuggable="true" <br >
 tools:ignore="HardcodedDebugMode"
 
 # Caso não queira, basta remove - las.
