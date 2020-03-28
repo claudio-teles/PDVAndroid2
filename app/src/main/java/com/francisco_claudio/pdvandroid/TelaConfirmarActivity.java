@@ -74,6 +74,8 @@ public class TelaConfirmarActivity extends AppCompatActivity {
                         );
                         toast.show();
 
+                        textPagamento.setVisibility(View.VISIBLE);
+
                     }
                 }
         );

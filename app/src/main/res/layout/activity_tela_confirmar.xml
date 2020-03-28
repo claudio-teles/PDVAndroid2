@@ -31,6 +31,7 @@
         android:text="@string/recPagamento"
         android:textColor="@android:color/white"
         android:textSize="18sp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/imageRecibo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageVoltar"
