@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private FormaPagamentoAdapter adapter;
 
     private List<String> listaDeNumeros = new ArrayList<>();
-    private String valor = "0,00";
+    private String valor;
     private String opcaoPagamento = "";
 
     @Override
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         button10 = findViewById(R.id.button10);
         button11 = findViewById(R.id.button11);
 
-        textValor.setText(valor);
+        textValor.setText("0,00");
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/DIN Condensed Bold.ttf");
         textValor.setTypeface(typeface);
 
@@ -108,70 +108,46 @@ public class MainActivity extends AppCompatActivity {
                             switch (position) {
                                 case 0:
                                     opcaoPagamento = "DINHEIRO";
-                                    irParaPaginaConfirmacao(valor, opcaoPagamento);
-                                    Toast toast = Toast.makeText(
-                                            getApplicationContext(),
-                                            opcaoPagamento,
-                                            Toast.LENGTH_SHORT
-                                    );
-                                    toast.show();
+                                    incluirNumeroLista(opcaoPagamento);
                                     break;
                                 case 1:
                                     opcaoPagamento = "DÉBITO";
-                                    irParaPaginaConfirmacao(valor, opcaoPagamento);
-                                    Toast toast2 = Toast.makeText(
-                                            getApplicationContext(),
-                                            opcaoPagamento,
-                                            Toast.LENGTH_SHORT
-                                    );
-                                    toast2.show();
+                                    incluirNumeroLista(opcaoPagamento);
+                                    break;
+                                case 2:
+                                    opcaoPagamento = "CRÉDITO";
+                                    incluirNumeroLista(opcaoPagamento);
                                     break;
                                 case 3:
-                                    opcaoPagamento = "CRÉDITO";
-                                    irParaPaginaConfirmacao(valor, opcaoPagamento);
-                                    Toast toast3 = Toast.makeText(
-                                            getApplicationContext(),
-                                            opcaoPagamento,
-                                            Toast.LENGTH_SHORT
-                                    );
-                                    toast3.show();
+                                    opcaoPagamento = "VR";
+                                    incluirNumeroLista(opcaoPagamento);
                                     break;
                                 case 4:
-                                    opcaoPagamento = "VR";
-                                    irParaPaginaConfirmacao(valor, opcaoPagamento);
-                                    Toast toast4 = Toast.makeText(
-                                            getApplicationContext(),
-                                            opcaoPagamento,
-                                            Toast.LENGTH_SHORT
-                                    );
-                                    toast4.show();
-                                    break;
-                                case 5:
                                     opcaoPagamento = "CUPOM";
-                                    irParaPaginaConfirmacao(valor, opcaoPagamento);
-                                    Toast toast5 = Toast.makeText(
-                                            getApplicationContext(),
-                                            opcaoPagamento,
-                                            Toast.LENGTH_SHORT
-                                    );
-                                    toast5.show();
+                                    incluirNumeroLista(opcaoPagamento);
                                     break;
                             }
                         }
 
                         @Override
-                        public void onLongItemClick(View view, int position) {
-
-                        }
+                        public void onLongItemClick(View view, int position) {}
 
                         @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                        }
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {}
                     }
             )
         );
 
+    }
+
+    public void incluirNumeroLista(String opcaoPagamento) {
+        irParaPaginaConfirmacao(valor, opcaoPagamento);
+        Toast toast = Toast.makeText(
+                getApplicationContext(),
+                opcaoPagamento,
+                Toast.LENGTH_SHORT
+        );
+        toast.show();
     }
 
     public void irParaPaginaConfirmacao(String valorPagamento, String formaPagamento) {

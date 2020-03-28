@@ -1,7 +1,5 @@
 package com.francisco_claudio.pdvandroid;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
@@ -9,10 +7,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.Date;
 
 public class TelaConfirmarActivity extends AppCompatActivity {
@@ -48,8 +44,10 @@ public class TelaConfirmarActivity extends AppCompatActivity {
 
                         Toast toast = Toast.makeText(
                                 getApplicationContext(),
-                                "Confirmado, data: "+dataPagamento,
-                                Toast.LENGTH_SHORT
+                                "Pagamento confirmado: \n" +
+                                        "Valor: "+dados.getString("valor")+", Opção: "+dados.getString("opcao")+"\n"
+                                +"Data: "+dataPagamento+".",
+                                Toast.LENGTH_LONG
                         );
                         toast.show();
 
