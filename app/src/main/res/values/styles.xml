@@ -8,4 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="ThemeTelaConfirmar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#418d86</item>
+        <item name="colorPrimaryDark">#40a07d</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
 </resources>

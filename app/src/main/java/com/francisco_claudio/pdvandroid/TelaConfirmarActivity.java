@@ -1,6 +1,5 @@
 package com.francisco_claudio.pdvandroid;
 
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -19,9 +18,15 @@ public class TelaConfirmarActivity extends AppCompatActivity {
     private TextView textConfirmar;
     private Button buttonConfPag;
 
+    private String valorString;
+    private String opcaoString;
+    private String dataString;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        getTheme().applyStyle(R.style.ThemeTelaConfirmar, true);
         setContentView(R.layout.activity_tela_confirmar);
 
         textPagamento = findViewById(R.id.textPagamento);
@@ -42,6 +47,10 @@ public class TelaConfirmarActivity extends AppCompatActivity {
                         Float valor = dados.getFloat("valor");
                         String opcaoPagamento = dados.getString("opcao");
                         String dataPagamento = new Date().toGMTString();
+
+                        valorString = String.valueOf(valor);
+                        opcaoString = opcaoPagamento;
+                        dataString = dataPagamento;
 
                         String criarTabela = "CREATE TABLE pagamento ("+
 						"	id INTEGER NOT NULL,"+
@@ -77,6 +86,7 @@ public class TelaConfirmarActivity extends AppCompatActivity {
                         textPagamento.setVisibility(View.VISIBLE);
 
                     }
+
                 }
         );
 
@@ -85,6 +95,5 @@ public class TelaConfirmarActivity extends AppCompatActivity {
     public void voltar(View view) {
         finish();
     }
-
 
 }
